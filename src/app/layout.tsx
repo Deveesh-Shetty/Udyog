@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import { siteConfig } from "@/config/site"
 import { Metadata } from "next"
 import "./globals.css"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -51,6 +52,9 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+
+        {/* Indicating the size of the screen */}
+        <TailwindIndicator />
 
         {/* Allow for more height on mobile devices */}
         <div className="h-40 md:hidden"></div>

@@ -1,5 +1,7 @@
-import { Menu } from "lucide-react"
+import { LucideIcon, Menu } from "lucide-react"
 
-export const icons = {
+export type Icon = LucideIcon
+
+export const Icons = {
   menu: Menu,
 }

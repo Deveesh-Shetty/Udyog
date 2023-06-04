@@ -1,5 +1,4 @@
-import { Menu } from "lucide-react"
-import { FC } from "react"
+import { Icons } from "@/components/icons"
 
 interface NavbarProps {}
 
@@ -12,7 +11,7 @@ function Navbar({}: NavbarProps) {
 
       {/* Mobile Navbar */}
       <div className="md:hidden ml-auto">
-        {}
+        <Icons.menu />
       </div>
     </nav>
   )
