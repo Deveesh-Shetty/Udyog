@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site"
 import { Metadata } from "next"
 import "./globals.css"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -48,16 +49,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} container mx-auto py-4 min-h-[300vh] bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-white antialiased `}
+        className={`${inter.className} container mx-auto py-4 min-h-[300vh] bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-white antialiased `}
       >
-        <Navbar />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          {children}
 
-        {/* Indicating the size of the screen */}
-        <TailwindIndicator />
+          {/* Indicating the size of the screen */}
+          <TailwindIndicator />
 
-        {/* Allow for more height on mobile devices */}
-        <div className="h-40 md:hidden"></div>
+          {/* Allow for more height on mobile devices */}
+          <div className="h-40 md:hidden"></div>
+        </ThemeProvider>
       </body>
     </html>
   )
