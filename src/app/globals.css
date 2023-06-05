@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --accent-light: #ff8800;
+  --accent-dark: #ff6600;
+}

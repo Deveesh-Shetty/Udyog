@@ -1,3 +1,4 @@
+import AuthForm from "@/components/auth-form"
 import LargeHeading from "@/components/ui/large-heading"
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         Lorem ipsum <br />
         dolor sit amet.
       </LargeHeading>
+      <AuthForm />
     </main>
   )
 }
