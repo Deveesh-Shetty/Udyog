@@ -19,15 +19,20 @@ const headingVariants = cva(
 )
 interface LargeHeadingProps
   extends HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headingVariants> {}
+    VariantProps<typeof headingVariants> {
+  accent?: boolean
+}
 
 const LargeHeading = forwardRef<HTMLHeadingElement, LargeHeadingProps>(
-  ({ className, size, children, ...props }, ref) => {
+  ({ className, size, children, accent, ...props }, ref) => {
     return (
       <h1
         ref={ref}
         {...props}
-        className={cn(headingVariants({ size, className }))}
+        className={`${cn(
+          headingVariants({ size, className }),
+          accent && "text-[var(--accent-dark)] dark:text-[var(--accent-dark)]"
+        )}`}
       >
         {children}
       </h1>
